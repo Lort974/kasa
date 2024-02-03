@@ -14,7 +14,9 @@ const Banner = ({location}) => {
     }
 
     return <>
-        <div><img src={bannerPic} alt="Illustration de la bannière" /></div>
+        <div className="banner">
+            <img className="banner__img" src={bannerPic} alt="Illustration de la bannière" />
+        </div>
     </>
 }
 
