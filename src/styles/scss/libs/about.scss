@@ -1,0 +1,42 @@
+.collapse {
+    max-width: 1023px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .collapse__element__title {
+        width: 100%;
+        background-color: $red;
+        padding: 10px 20px 8px 15px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .collapse__element__title__text {
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .collapse__element__title__img {
+            width: 32px;
+            height: 32px;
+            transition: all 400ms ease;
+        }
+        .collapse__element__title__img--hidden {
+            transform: rotate(180deg);
+        }
+    }
+    .collapse__element__description {
+        box-sizing: border-box;
+        background-color: $background-grey;
+        padding: 15px 15px;
+        font-size: 18px;
+        width: 100%;
+        overflow: hidden;
+        //transition: all 200ms linear;
+    }
+    .collapse__element__description--hidden {
+        height: 0px;
+        padding: 0 15px;
+    }
+}

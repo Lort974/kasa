@@ -1,14 +1,24 @@
-import { useRouteError } from "react-router-dom/dist"
-import Root from "../components/Root"
+import { useRouteError, NavLink } from "react-router-dom/dist"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const PageError = () => {
     const error = useRouteError()
 
-    console.log(error.status)
+    const errorDescription = error.status === 404 ? "Oups! La page que vous demandez n'existe pas." : error.data
 
     return <>
-        <Root />
-        <h1>L'erreur {error.status} s'est produite.</h1>
+        <Header />
+        <div className="pageError">
+            <div className="pageError__title">
+                {error.status}
+            </div>
+            <div className="pageError__description">
+                {errorDescription}
+            </div>
+            <NavLink className="pageError__action" to="/">Retourner sur la page d'accueil</NavLink>
+        </div>
+        <Footer />
     </>
 }
 
