@@ -1,6 +1,5 @@
 import { useState } from "react"
 import arrow from "../assets/images/arrow.svg"
-import aboutDatas from "../datas/about.json"
 
 const CollapseElement = ({ data }) => {
     const hideDescription = "collapse__element__description collapse__element__description--hidden"
@@ -30,14 +29,14 @@ const CollapseElement = ({ data }) => {
     )
 }
 
-const Collapse = () => {
-    const about = aboutDatas.map(data => (
+const Collapse = ({ datas, type }) => {
+    const about = datas.map(data => (
         <CollapseElement key={data.title} data={data} />
     ))
 
-    return <section className="collapse">
+    return <div className={"collapse collapse"+type}>
         {about}
-    </section>
+    </div>
 }
 
 export default Collapse

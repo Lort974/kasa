@@ -3,7 +3,7 @@ import Root from "../components/Root"
 import Home from "../pages/Home"
 import About from "../pages/About"
 import PageError from "../pages/PageError"
-import Housings from "../components/Housings"
+import Housings from "../pages/Housings"
 
 const router = createBrowserRouter([
     {

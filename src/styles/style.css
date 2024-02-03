@@ -100,14 +100,29 @@ code {
   z-index: 1;
 }
 
-.collapse {
+.collapse--about {
   max-width: 1023px;
-  margin: auto;
-  display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.collapse .collapse__element__title {
+
+.collapse--housingDetails {
+  max-width: 100%;
+  flex-direction: row;
+  gap: 76px;
+  justify-content: space-between;
+}
+
+.collapse {
+  margin: auto;
+  display: flex;
+}
+.collapse .collapse__element {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.collapse .collapse__element .collapse__element__title {
   width: 100%;
   background-color: #FF6060;
   padding: 10px 20px 8px 15px;
@@ -117,19 +132,19 @@ code {
   justify-content: space-between;
   align-items: center;
 }
-.collapse .collapse__element__title .collapse__element__title__text {
+.collapse .collapse__element .collapse__element__title .collapse__element__title__text {
   color: #ffffff;
   font-weight: 700;
 }
-.collapse .collapse__element__title .collapse__element__title__img {
+.collapse .collapse__element .collapse__element__title .collapse__element__title__img {
   width: 32px;
   height: 32px;
   transition: all 400ms ease;
 }
-.collapse .collapse__element__title .collapse__element__title__img--hidden {
+.collapse .collapse__element .collapse__element__title .collapse__element__title__img--hidden {
   transform: rotate(180deg);
 }
-.collapse .collapse__element__description {
+.collapse .collapse__element .collapse__element__description {
   box-sizing: border-box;
   background-color: #F6F6F6;
   padding: 15px 15px;
@@ -137,7 +152,7 @@ code {
   width: 100%;
   overflow: hidden;
 }
-.collapse .collapse__element__description--hidden {
+.collapse .collapse__element .collapse__element__description--hidden {
   height: 0px;
   padding: 0 15px;
 }
@@ -181,6 +196,34 @@ code {
 }
 .footer .footer__copyright {
   color: #ffffff;
+}
+
+.carousel {
+  width: 100%;
+  height: 415px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.carousel .carousel__picture {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.carousel .carousel__arrow {
+  z-index: 2;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.carousel .carousel__arrow--backward {
+  left: 0;
+}
+.carousel .carousel__arrow--forward {
+  right: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

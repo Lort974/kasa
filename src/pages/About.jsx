@@ -1,13 +1,16 @@
-import { NavLink, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import Banner from '../components/Banner'
 import Collapse from '../components/Collapse'
+import aboutDatas from "../datas/about.json"
 
 const Home = () => {
     const location = useLocation()
 
     return <>
         <Banner location={location.pathname} />
-        <Collapse />
+        <section>
+            <Collapse datas={aboutDatas} type="--about" />
+        </section>
     </>
 }
 
