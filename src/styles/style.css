@@ -1,11 +1,20 @@
 body {
-  margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 1240px;
   font-family: "Montserrat";
   font-size: 24px;
+  margin: 0;
+}
+
+section {
+  margin: auto;
+  max-width: 1240px;
+}
+@media screen and (max-width: 1240px) {
+  section {
+    margin: 0px 20px;
+  }
 }
 
 a {
@@ -18,26 +27,59 @@ code {
 }
 
 .header {
-  margin: 45px 0 50px 0;
+  margin: 45px auto 50px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1240px;
 }
-
-.nav {
+@media screen and (max-width: 1240px) {
+  .header {
+    margin: 45px 20px 50px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    margin: 20px 20px 27px 20px;
+  }
+}
+.header .logo .logo__img {
+  width: 211px;
+}
+@media screen and (max-width: 768px) {
+  .header .logo .logo__img {
+    width: 145px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .header .logo .logo__img {
+    width: 125px;
+  }
+}
+.header .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 57px;
 }
-.nav .nav__link--current {
+@media screen and (max-width: 768px) {
+  .header .nav {
+    gap: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header .nav .nav__link {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+.header .nav .nav__link--current {
   text-decoration: underline;
 }
 
 .banner {
-  width: 100%;
   height: 223px;
-  margin: 0 0 43px 0;
+  margin-bottom: 43px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -45,6 +87,12 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    margin-bottom: 22px;
+    box-shadow: none;
+  }
 }
 .banner .banner__img {
   position: absolute;
@@ -56,11 +104,17 @@ code {
 }
 .banner .banner__title {
   font-size: 48px;
+  padding: 16px;
   color: #ffffff;
   position: relative;
   z-index: 2;
   font-weight: 700;
   text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000, -1px -1px #000000, 1px 1px #000000, 1px -1px #000000, -1px 1px #000000, 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 768px) {
+  .banner .banner__title {
+    font-size: 24px;
+  }
 }
 
 .cardList {
@@ -68,14 +122,28 @@ code {
   padding: 56px 55px 43px;
   border-radius: 25px;
   display: grid;
-  grid-template-columns: repeat(3, 340px);
+  grid-template-columns: repeat(3, minmax(auto, 340px));
   grid-gap: 55px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .cardList {
+    grid-template-columns: repeat(1, auto);
+    padding: 0;
+    background-color: #ffffff;
+    grid-gap: 20px;
+  }
 }
 .cardList .cardList__card {
   height: 340px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .cardList .cardList__card {
+    height: 255px;
+  }
 }
 .cardList .cardList__card .cardList__card__title {
   position: relative;
@@ -99,11 +167,28 @@ code {
   max-height: 340px;
   z-index: 1;
 }
+@media screen and (max-width: 768px) {
+  .cardList .cardList__card .cardList__card__img {
+    max-height: unset;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 421px) {
+  .cardList .cardList__card .cardList__card__img {
+    max-height: 255px;
+    width: auto;
+  }
+}
 
 .collapse--about {
   max-width: 1023px;
   flex-direction: column;
   gap: 30px;
+}
+@media screen and (max-width: 768px) {
+  .collapse--about {
+    gap: 20px;
+  }
 }
 
 .collapse--housingDetails {
@@ -111,6 +196,12 @@ code {
   flex-direction: row;
   gap: 76px;
   justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .collapse--housingDetails {
+    gap: 20px;
+    flex-direction: column;
+  }
 }
 
 .collapse {
@@ -131,6 +222,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 300ms linear;
 }
 .collapse .collapse__element .collapse__element__title .collapse__element__title__text {
   color: #ffffff;
@@ -139,10 +231,12 @@ code {
 .collapse .collapse__element .collapse__element__title .collapse__element__title__img {
   width: 32px;
   height: 32px;
-  transition: all 400ms ease;
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition: all 300ms linear;
 }
 .collapse .collapse__element .collapse__element__title .collapse__element__title__img--hidden {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 .collapse .collapse__element .collapse__element__description {
   box-sizing: border-box;
@@ -179,16 +273,21 @@ code {
 }
 
 .footer {
-  margin: 50px 0 0 0;
+  margin-top: 50px;
   width: 100%;
   height: 209px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 28px;
-  padding: 66px 0 29px 0;
+  padding: 66px 20px 29px 20px;
   box-sizing: border-box;
   background-color: #000000;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-top: 27px;
+  }
 }
 .footer .footer__logo {
   width: 122px;
@@ -196,6 +295,11 @@ code {
 }
 .footer .footer__copyright {
   color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer__copyright {
+    font-size: 12px;
+  }
 }
 
 .carousel {
@@ -205,6 +309,11 @@ code {
   overflow: hidden;
   border-radius: 25px;
 }
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: 255px;
+  }
+}
 .carousel .carousel__picture {
   width: 100%;
   position: absolute;
@@ -213,17 +322,142 @@ code {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+@media screen and (max-width: 768px) {
+  .carousel .carousel__picture {
+    max-height: 255px;
+    width: auto;
+  }
+}
 .carousel .carousel__arrow {
   z-index: 2;
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
 }
+@media screen and (max-width: 768px) {
+  .carousel .carousel__arrow {
+    width: 24px;
+    height: 24px;
+  }
+}
 .carousel .carousel__arrow--backward {
   left: 0;
 }
 .carousel .carousel__arrow--forward {
   right: 0;
+}
+.carousel .carousel__dial {
+  z-index: 2;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 25px;
+  font-size: 18px;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .carousel .carousel__dial {
+    display: none;
+  }
+}
+
+.housing {
+  display: flex;
+  flex-direction: column;
+}
+.housing .housing__details {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 0 0;
+}
+.housing .housing__details .housing__details__header {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .housing .housing__details .housing__details__header {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.housing .housing__details .housing__details__header .housing__details__header__left {
+  display: flex;
+  flex-direction: column;
+}
+.housing .housing__details .housing__details__header .housing__details__header__left .housing__details__header__left__title {
+  color: #FF6060;
+  font-size: 36px;
+  margin: 0;
+}
+.housing .housing__details .housing__details__header .housing__details__header__left .housing__details__header__left__location {
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  .housing .housing__details .housing__details__header .housing__details__header__left .housing__details__header__left__location {
+    margin-top: 5px;
+  }
+}
+.housing .housing__details .housing__details__header .housing__details__header__left .housing__details__header__left__tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .housing .housing__details .housing__details__header .housing__details__header__left .housing__details__header__left__tags {
+    margin-top: 10px;
+  }
+}
+.housing .housing__details .housing__details__header .housing__details__header__left .housing__details__header__left__tags .housing__details__header__left__tags__elt {
+  background-color: #FF6060;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 3px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.housing .housing__details .housing__details__header .housing__details__header__right {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .housing .housing__details .housing__details__header .housing__details__header__right {
+    margin-top: 16px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.housing .housing__details .housing__details__header .housing__details__header__right .housing__details__header__right__host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 21px 0;
+  justify-content: flex-end;
+}
+.housing .housing__details .housing__details__header .housing__details__header__right .housing__details__header__right__host .housing__details__header__right__host__name {
+  text-align: right;
+  font-size: 18px;
+  color: #FF6060;
+}
+.housing .housing__details .housing__details__header .housing__details__header__right .housing__details__header__right__host .housing__details__header__right__host__picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+}
+.housing .housing__details .housing__details__header .housing__details__header__right .housing__details__header__right__rating {
+  display: flex;
+  align-items: center;
+}
+.housing .housing__details .housing__details__description {
+  margin-top: 24px;
+}
+@media screen and (max-width: 768px) {
+  .housing .housing__details .housing__details__description {
+    margin-top: 13px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

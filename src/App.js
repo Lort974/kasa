@@ -1,5 +1,5 @@
 import { RouterProvider } from 'react-router-dom'
-import router from '../router/Router'
+import router from './router/Router'
 import WebFont from 'webfontloader';
 import { useEffect } from 'react';
 

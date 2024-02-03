@@ -4,6 +4,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 25px;
+
+    @include respond-to(mobile) {
+        height: 255px;
+    }
     .carousel__picture {
         width: 100%;
         position: absolute;
@@ -11,17 +15,40 @@
         left: 50%;
         transform: translate(-50%,-50%);
         z-index: 1;
+
+        @include respond-to(mobile) {
+            max-height: 255px;
+            width: auto;
+        }
     }
     .carousel__arrow {
         z-index: 2;
         position: absolute;
         transform: translateY(-50%);
         top: 50%;
+
+        @include respond-to(mobile) {
+            width: 24px;
+            height: 24px;
+        }
     }
     .carousel__arrow--backward {
         left: 0;
     }
     .carousel__arrow--forward {
         right: 0;
+    }
+    .carousel__dial {
+        z-index: 2;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: 25px;
+        font-size: 18px;
+        color: #ffffff;
+
+        @include respond-to(mobile) {
+            display: none;
+        }
     }
 }

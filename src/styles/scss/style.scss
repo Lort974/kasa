@@ -1,5 +1,41 @@
 $red: #FF6060;
 $background-grey: #F6F6F6;
+$breakpoint-mobile-card: 421px;
+$breakpoint-mobile-logo: 350px;
+$breakpoint-mobile: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-width-limit: 1240px;
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == mobile {
+        @media screen and (max-width: $breakpoint-mobile) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == desktop {
+        @media screen and (max-width: $breakpoint-desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == width-limit {
+        @media screen and (max-width: $breakpoint-width-limit) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == mobile-card {
+        @media screen and (max-width: $breakpoint-mobile-card) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == mobile-logo {
+        @media screen and (max-width: $breakpoint-mobile-logo) {
+            @content;
+        }
+    }
+}
 
 @import "libs/index.scss";
 @import "libs/header.scss";
@@ -9,3 +45,4 @@ $background-grey: #F6F6F6;
 @import "libs/pageerror.scss";
 @import "libs/footer.scss";
 @import "libs/carousel.scss";
+@import "libs/housing.scss";

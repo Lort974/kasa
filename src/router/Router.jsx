@@ -4,12 +4,14 @@ import Home from "../pages/Home"
 import About from "../pages/About"
 import PageError from "../pages/PageError"
 import Housings from "../pages/Housings"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        errorElement: <PageError />,
+        errorElement: <><Header /><PageError /><Footer /></>,
         children: [
             {
                 path: "",

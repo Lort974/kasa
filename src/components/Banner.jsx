@@ -17,12 +17,12 @@ const Banner = ({location}) => {
     }
 
     return <>
-        <div className="banner">
+        <section className="banner">
             <div className="banner__title">
                 {bannerTitle}
             </div>
             <img className="banner__img" src={bannerPic} alt="Illustration de la bannière" />
-        </div>
+        </section>
     </>
 }
 
