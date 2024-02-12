@@ -126,6 +126,11 @@ code {
   grid-gap: 55px;
   box-sizing: border-box;
 }
+@media screen and (max-width: 1024px) {
+  .cardList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width: 768px) {
   .cardList {
     grid-template-columns: repeat(1, auto);
@@ -136,16 +141,20 @@ code {
 }
 .cardList .cardList__card {
   height: 340px;
-  overflow: hidden;
-  position: relative;
   border-radius: 10px;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .cardList .cardList__card {
     height: 255px;
   }
 }
-.cardList .cardList__card .cardList__card__title {
+.cardList .cardList__card .cardList__card__link {
+  height: 100%;
+  position: relative;
+  display: block;
+}
+.cardList .cardList__card .cardList__card__link .cardList__card__link__title {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -159,7 +168,7 @@ code {
   z-index: 2;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(10, 10, 10, 0) 0%, rgba(4, 4, 4, 0.2) 50%, rgba(0, 0, 0, 0.5) 80%);
 }
-.cardList .cardList__card .cardList__card__img {
+.cardList .cardList__card .cardList__card__link .cardList__card__link__img {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -168,13 +177,13 @@ code {
   z-index: 1;
 }
 @media screen and (max-width: 768px) {
-  .cardList .cardList__card .cardList__card__img {
+  .cardList .cardList__card .cardList__card__link .cardList__card__link__img {
     max-height: unset;
     width: 100%;
   }
 }
 @media screen and (max-width: 421px) {
-  .cardList .cardList__card .cardList__card__img {
+  .cardList .cardList__card .cardList__card__link .cardList__card__link__img {
     max-height: 255px;
     width: auto;
   }
@@ -333,6 +342,7 @@ code {
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .carousel .carousel__arrow {

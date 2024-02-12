@@ -26,6 +26,7 @@
         position: absolute;
         transform: translateY(-50%);
         top: 50%;
+        cursor: pointer;
 
         @include respond-to(mobile) {
             width: 24px;
