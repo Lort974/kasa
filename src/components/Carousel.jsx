@@ -1,5 +1,4 @@
 import housings from "../datas/logements.json"
-import { useActionData, useParams } from "react-router-dom"
 import { useState } from "react"
 import carouselBackward from "../assets/images/carousel_backward.svg"
 import carouselForward from "../assets/images/carousel_forward.svg"

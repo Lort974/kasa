@@ -3,7 +3,7 @@ import Banner from '../components/Banner'
 import Collapse from '../components/Collapse'
 import aboutDatas from "../datas/about.json"
 
-const Home = () => {
+const About = () => {
     const location = useLocation()
 
     return <>
@@ -14,4 +14,4 @@ const Home = () => {
     </>
 }
 
-export default Home
+export default About
