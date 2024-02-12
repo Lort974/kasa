@@ -50,7 +50,7 @@ const Housings = () => {
 
     return <section className="housing">
         <div className="housing__carousel">
-            <Carousel />
+            <Carousel id={id} />
         </div>
         <div className="housing__details">
             <div className="housing__details__header">

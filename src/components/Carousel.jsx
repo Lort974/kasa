@@ -4,9 +4,7 @@ import { useState } from "react"
 import carouselBackward from "../assets/images/carousel_backward.svg"
 import carouselForward from "../assets/images/carousel_forward.svg"
 
-const Carousel = () => {
-    const { id } = useParams()
-
+const Carousel = ({id}) => {
     const [currentPicNbr, setCurrentPicNbr] = useState(1)
 
     const currentHousingPictures = housings.filter(housing => (housing.id === id))[0].pictures
